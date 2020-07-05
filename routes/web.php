@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,7 @@ Route::get('/', function ()
     return view('home')->with('nombre', 'Olonte Apps 2020');
 });
 */
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
